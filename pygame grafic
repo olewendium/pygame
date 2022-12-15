@@ -1,0 +1,15 @@
+import pygame as pg
+import keyboard as key
+pg.init()
+tur = [[20,50],[30,120],[60,60],[70,140],[80,300],[100,100]]
+playing = True
+screen = pg.display.set_mode((320, 480))
+while playing:
+    screen.fill((240,240,240))
+    for i in range(len(tur)-1):
+        pg.draw.circle(screen, (0,0,0),tur[i], 2)
+        pg.draw.circle(screen, (0,0,0),tur[i+1], 2)
+        pg.draw.aaline(screen, (100,50,80), tur[i], tur[i+1])
+    pg.display.flip()
+    #if key.is_pressed('escape'):
+        #playing=False
